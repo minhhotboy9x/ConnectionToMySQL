@@ -25,7 +25,7 @@ namespace ConnectionToMySQL
             Console.WriteLine(ConfigurationManager.AppSettings["id2"]); 
             try
             {
-                string connstring = "server=127.0.0.1;uid=root;pwd=minh19032002;database=sakila";
+                string connstring = ConfigurationManager.ConnectionStrings["Test"].ToString();
                 MySqlConnection con = new MySqlConnection();
                 con.ConnectionString = connstring;
                 con.Open();
