@@ -26,6 +26,7 @@ namespace ConnectionToMySQL
             try
             {
                 string connstring = ConfigurationManager.ConnectionStrings["Test"].ToString();
+                //string connstring = "server=127.0.0.1;uid=root;pwd=minh19032002;database=sakila";
                 MySqlConnection con = new MySqlConnection();
                 con.ConnectionString = connstring;
                 con.Open();
@@ -35,7 +36,7 @@ namespace ConnectionToMySQL
                 DataTable dt = new DataTable();
                 dt.Load(reader);
                 dataGridView1.DataSource = dt;
-
+                con.Close();
             }
             catch(MySqlException ex)
             {
