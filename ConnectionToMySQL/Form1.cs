@@ -22,8 +22,8 @@ namespace ConnectionToMySQL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(ConfigurationManager.AppSettings["id1"]); 
-            Console.WriteLine(ConfigurationManager.AppSettings["id2"]); 
+            //Console.WriteLine(ConfigurationManager.AppSettings["id1"]); 
+            //Console.WriteLine(ConfigurationManager.AppSettings["id2"]); 
             try
             {
                 string connstring = ConfigurationManager.ConnectionStrings["Test"].ToString();
@@ -37,6 +37,7 @@ namespace ConnectionToMySQL
                 DataTable dt = new DataTable();
                 dt.Load(reader);
                 dataGridView1.DataSource = dt;
+                Console.WriteLine(dataGridView1.Columns.Count);
                 con.Close();
             }
             catch(MySqlException ex)
