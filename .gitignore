@@ -360,7 +360,7 @@ MigrationBackup/
 .ionide/
 
 #app.config
-ConnectionToMySQL\App.config
+ConnectionToMySQL/App.config
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
