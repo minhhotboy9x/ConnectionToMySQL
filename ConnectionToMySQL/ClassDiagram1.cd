@@ -11,18 +11,18 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="ConnectionToMySQL.UserControl1">
-    <Position X="3.5" Y="3.75" Width="1.5" />
+    <Position X="2" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>UserControl1.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="System.Windows.Forms.Form" Collapsed="true">
-    <Position X="6.5" Y="1.5" Width="1.5" />
+    <Position X="3" Y="0.75" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="System.Windows.Forms.UserControl" Collapsed="true">
-    <Position X="9.5" Y="1.5" Width="1.5" />
+    <Position X="5.5" Y="2" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Font Name="Segoe UI" Size="9" />

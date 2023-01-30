@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace ConnectionToMySQL
 {
@@ -26,21 +26,20 @@ namespace ConnectionToMySQL
             //Console.WriteLine(ConfigurationManager.AppSettings["id2"]); 
             try
             {
-                string connstring = ConfigurationManager.ConnectionStrings["Test"].ToString();
-                //string connstring = "server=127.0.0.1;uid=root;pwd=minh19032002;database=sakila";
-                MySqlConnection con = new MySqlConnection();
-                con.ConnectionString = connstring;
+                string constring = ConfigurationManager.ConnectionStrings["Test"].ToString();
+                //string constring = @"Data Source=MSI\MINH; Initial Catalog=QLBONGDA_MinhNQN_20200408; 
+                //Integrated Security=True";
+                SqlConnection con = new SqlConnection(constring);
                 con.Open();
-                string sql = "select * from actor";
-                MySqlCommand cmd = new MySqlCommand(sql, con);
-                MySqlDataReader reader = cmd.ExecuteReader();
+                string sql = "select * from CAUTHU_MinhNQN as ct";
+                SqlDataAdapter cmd = new SqlDataAdapter(sql, con);
                 DataTable dt = new DataTable();
-                dt.Load(reader);
+                cmd.Fill(dt);
                 dataGridView1.DataSource = dt;
-                Console.WriteLine(dataGridView1.Columns.Count);
+                //Console.WriteLine(dataGridView1.Columns.Count);
                 con.Close();
             }
-            catch(MySqlException ex)
+            catch(SqlException ex)
             {
                 MessageBox.Show(ex.ToString());
             }
